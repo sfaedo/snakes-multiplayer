@@ -1,0 +1,5 @@
+
+https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation
+https://www.html5gamedevs.com/topic/25589-general-data-structure-for-phaser-snake-game/
+https://www.html5gamedevs.com/uploads/monthly_2016_10/snake_question2.png.a699df0667212e56a55c171791cbde70.png
+https://stackoverflow.com/questions/45706829/change-color-image-in-canvas
