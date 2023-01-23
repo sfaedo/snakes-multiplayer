@@ -99,7 +99,6 @@ class Snake {
 			this.size
 		);
 
-		//ctx.drawImage(this.canvas, 0, 0, this.size, this.size);
 		/*ctx.fillStyle = this.color;
 		ctx.fillRect(
 			this.x * this.size + 4,
