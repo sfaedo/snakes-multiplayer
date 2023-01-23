@@ -1,6 +1,8 @@
 class Snake {
 	energy = 0;
 	energyTotal = 0;
+	canvas = document.createElement('canvas');
+	ctx = this.canvas.getContext('2d');
 
 	constructor(x, y, size, color, velX, velY, next) {
 		this.x = x;
@@ -16,6 +18,22 @@ class Snake {
 
 		this.tickAdd = 0;
 		this.tickRate = 250;
+
+		const img = document.getElementById('snake-image');
+		this.ctx.fillStyle = this.color;
+		this.ctx.fillRect(0, 0, this.size * 2, this.size * 2);
+		this.ctx.globalCompositeOperation = 'destination-in';
+		this.ctx.drawImage(
+			img,
+			0,
+			80,
+			80,
+			80,
+			0,
+			0,
+			this.size * 2,
+			this.size * 2
+		);
 	}
 
 	update(diffTick, velX, velY) {
@@ -46,7 +64,43 @@ class Snake {
 	}
 
 	draw(ctx) {
-		ctx.fillStyle = this.color;
+		let x = 0;
+		let y = 0;
+
+		if (this.velX > 0) {
+			x = 1;
+			y = 1;
+		}
+
+		if (this.velX < 0) {
+			x = 0;
+			y = 0;
+		}
+
+		if (this.velY > 0) {
+			x = 0;
+			y = 1;
+		}
+
+		if (this.velY < 0) {
+			x = 1;
+			y = 0;
+		}
+
+		ctx.drawImage(
+			this.canvas,
+			x * this.size,
+			y * this.size,
+			this.size,
+			this.size,
+			this.x * this.size,
+			this.y * this.size,
+			this.size,
+			this.size
+		);
+
+		//ctx.drawImage(this.canvas, 0, 0, this.size, this.size);
+		/*ctx.fillStyle = this.color;
 		ctx.fillRect(
 			this.x * this.size + 4,
 			this.y * this.size + 4,
@@ -56,6 +110,6 @@ class Snake {
 
 		if (this.next) {
 			this.next.drawNext(ctx, this.x, this.y);
-		}
+		}*/
 	}
 }
