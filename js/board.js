@@ -18,7 +18,7 @@ class Board {
 
 	draw(ctx) {
 		ctx.beginPath();
-		ctx.translate(4, 4);
+		//ctx.translate(4, 4);
 
 		this.board.forEach((cell, index) => {
 			if (cell) {
@@ -26,21 +26,21 @@ class Board {
 			}
 		});
 
-		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		//ctx.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.stroke();
 	}
 
 	drawBackground(ctx) {
 		ctx.beginPath();
-		ctx.translate(4, 4);
+		//ctx.translate(4, 4);
 
 		this.board.forEach((cell, index) => {
 			const x = index % this.columns;
 			const y = Math.floor(index / this.columns);
-			ctx.rect(x * size, y * size, size - 4, size - 4);
+			ctx.rect(x * size, y * size, size, size);
 		});
 
-		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		//ctx.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.stroke();
 	}
 
@@ -136,6 +136,7 @@ class Board {
 					current.color,
 					null
 				);
+				newTail.prev = current;
 
 				current.next = newTail;
 				this.boardSet(current.x, current.y, newTail);
@@ -173,16 +174,17 @@ class Board {
 				start.x - 2 * start.vx,
 				start.y - 2 * start.vy,
 				this.size,
-				start.c2,
+				start.c1,
 				null
 			);
 			const tail1 = new Tail(
 				start.x - start.vx,
 				start.y - start.vy,
 				this.size,
-				start.c2,
+				start.c1,
 				tail2
 			);
+			tail2.prev = tail1;
 			const snake = new Snake(
 				start.x,
 				start.y,
@@ -192,6 +194,7 @@ class Board {
 				start.vy,
 				tail1
 			);
+			tail1.prev = snake;
 
 			const player = new Player({
 				index: position,

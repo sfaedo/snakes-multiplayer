@@ -98,17 +98,5 @@ class Snake {
 			this.size,
 			this.size
 		);
-
-		/*ctx.fillStyle = this.color;
-		ctx.fillRect(
-			this.x * this.size + 4,
-			this.y * this.size + 4,
-			this.size - 12,
-			this.size - 12
-		);
-
-		if (this.next) {
-			this.next.drawNext(ctx, this.x, this.y);
-		}*/
 	}
 }
