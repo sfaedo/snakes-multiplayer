@@ -31,7 +31,6 @@ class Tail {
 	draw(ctx) {
 		let x = 0;
 		let y = 0;
-
 		let up = false;
 		let down = false;
 		let left = false;

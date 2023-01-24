@@ -235,6 +235,7 @@ class Board {
 				player.playing();
 			}
 		});
+
 		this.appleAdd();
 		this.gameStart = true;
 	}

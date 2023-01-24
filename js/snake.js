@@ -60,6 +60,7 @@ class Snake {
 
 	addEnergy(energy) {
 		this.energy += energy;
+
 		this.energyTotal += energy;
 	}
 
