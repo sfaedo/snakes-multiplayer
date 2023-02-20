@@ -12,6 +12,8 @@ class Tail {
 		this.next = next;
 
 		const img = document.getElementById('snake-image');
+		this.canvas.height = this.size * 4;
+		this.canvas.width = this.size * 4;
 		this.ctx.fillStyle = this.color;
 		this.ctx.fillRect(0, 0, this.size * 4, this.size * 4);
 		this.ctx.globalCompositeOperation = 'destination-in';

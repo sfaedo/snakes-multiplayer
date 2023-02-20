@@ -20,6 +20,8 @@ class Snake {
 		this.tickRate = 250;
 
 		const img = document.getElementById('snake-image');
+		this.canvas.height = this.size * 2;
+		this.canvas.width = this.size * 2;
 		this.ctx.fillStyle = this.color;
 		this.ctx.fillRect(0, 0, this.size * 2, this.size * 2);
 		this.ctx.globalCompositeOperation = 'destination-in';
