@@ -305,7 +305,7 @@
 	 * - 'wordWrapColumn': Lines will wrap at 'editor.wordWrapColumn'.
 	 * Defaults to 'on'.
 	 */
-	// "editor.wordWrap": "on",
+	"editor.wordWrap": "off",
 	/**
 	 * Controls the wrapping column of the editor when 'editor.wordWrap' is 'wordWrapColumn' or 'bounded'.
 	 * Defaults to 80.
