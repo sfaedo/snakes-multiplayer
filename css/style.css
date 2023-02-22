@@ -1,6 +1,7 @@
 * {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
 
 html,
@@ -48,7 +49,7 @@ canvas {
 .player-board-name,
 .player-board-score,
 .player-board-status {
-	margin: calc(0.1vw + 0.1vh);
-	font-size: calc(1.3vw + 1.3vh);
+	margin: 1svh;
+	font-size: 5svh;
 	overflow: hidden;
 }
