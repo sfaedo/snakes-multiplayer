@@ -54,7 +54,7 @@ class Snake {
 				}
 			}
 
-			this.tickAdd -= this.tickRate;
+			this.tickAdd = 0; // -= this.tickRate;
 
 			return { x: this.x + this.velX, y: this.y + this.velY };
 		}
